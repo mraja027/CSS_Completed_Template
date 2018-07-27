@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Dropdown Navbar</title>
+    <link rel="stylesheet" href="bootstrap/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            font-family: "Comic Sans MS",sans-serif;
+            margin: 0;
+        }
+        nav{
+            background-color: black;
+            overflow: hidden;
+        }
+        nav ul{
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        nav ul li{
+            float: left;
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            padding: 14px 25px;
+            padding-right: 50px;
+            display: inline-block;
+        }
+        nav ul li a:hover{
+            background-color: seagreen;
+        }
+
+        .dropdown_list{
+            background-color: lightgreen;
+            position: absolute;
+            display: none; /* to hide this */
+
+        }
+
+        .dropdown_list a{
+            display: block;
+            color: black;
+        }
+
+        .dropdown_list a:hover{
+            background-color: seagreen;
+            color: white;
+        }
+
+        /* for dropdown effect */
+        .dropdown:hover .dropdown_list{
+            display: block;
+        }
+        .dropdown_list_sub{
+            display: none;
+        }
+        .dropdown ul.dropdown_list .drop_sub .dropdown_list_sub{
+            display: none;
+            position: absolute;
+        }
+        .dropdown ul.dropdown_list .drop_sub:hover .dropdown_list_sub{
+            display: block;
+        }
+
+        .load{
+            border: 10px dotted rgb(28,35,49);
+            border-radius: 50%;
+            margin-left: 300px;
+            height: 50px;
+            width: 50px;
+            animation: spin 2s linear infinite;
+        }
+        @keyframes spin {
+            0%{
+                transform: rotate(0deg);
+                text-align: center;
+                background-color: transparent;
+            }
+            100%{
+                transform: rotate(360deg);
+                text-align: center;
+                background-color: transparent;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li>
+            <a href="#">
+                <i class="fa fa-home"></i> Home</a>
+        </li>
+        <li class="dropdown">
+            <a href="#">
+                <i class="fa fa-newspaper-o"></i> News
+            </a>
+            <div class="dropdown_list">
+                <a href="#">
+                    <i class="fa fa-soccer-ball-o"></i> Sports
+                </a>
+                <a href="#">
+                    <i class="fa fa-laptop"></i> Technology</a>
+                <a href="#">
+                    <i class="fa fa-image"></i> Arts</a>
+                <a href="#">
+                    <i class="fa fa-sitemap"></i> Others</a>
+            </div>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-id-card"></i> About</a>
+        </li>
+        <li class="dropdown">
+            <a href="#">
+                <i class="fa fa-graduation-cap"></i> Careers</a>
+
+            <ul class="dropdown_list">
+                <li><a href="#">
+                    <i class="fa fa-coffee"></i> Java</a></li>
+                <li><a href="#">
+                    <i class="fa fa-image"></i> UI Development</a></li>
+                <li class="drop_sub"><a href="#">
+                    <i class="fa fa-book"></i> .Net</a>
+                    <ul class="dropdown_list_sub">
+                        <li><a href="#">Home</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">
+                    <i class="fa fa-code"></i> PHP</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-envelope"></i> Contact Us</a>
+        </li>
+    </ul>
+</nav>
+
+<div>
+<video control>
+   <source src="..img/sontam.mp4" type="video/mp4">
+</video>
+</div>
+
+
+
+
+</body>
+</html>
